@@ -1,0 +1,58 @@
+.game-grid{
+    width: 100vw;
+    
+
+
+    
+
+    display: grid;
+    
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-auto-flow: column;
+
+    // use css variables ??
+    &__cell{
+
+        --background-color: 255, 0, 0;
+        padding: 3rem 0;
+        border: 2px solid #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: bold;
+        font-size: 1.6rem;
+  
+        
+        cursor: pointer;
+        background-color: #B03F3F;
+        color: #fff;
+
+        &--filled{
+            background-color: #c15f5f;
+        }
+
+        &:hover{
+            background:#c15f5f;
+        }
+
+        &--used{
+            background-color: #7d19b3;
+
+            &:hover{
+                background-color: #7d19b3;
+            }
+        }
+
+        
+
+        &--header{
+            font-size: 2rem;
+            text-transform: uppercase;
+            
+            cursor:inherit;
+        }
+    }
+}
