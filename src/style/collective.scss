@@ -20,15 +20,6 @@
     @media only screen and (max-device-width: 600px) {
         padding-top: 5rem;
     }
-
-    /* used??
-    &--flex-start-mobile{
-        @media only screen and (max-device-width: 850px) {
-            justify-content: flex-start;
-        }
-
-      
-    }*/
 }
 
 .header{
@@ -54,6 +45,10 @@
     max-width: 80vw;
     text-align: center;
     margin: 2rem 0;
+
+    @media only screen and (max-device-width: 600px) {
+        font-size: 4rem;
+    }
 
     &--medium{
         max-width: 80%;

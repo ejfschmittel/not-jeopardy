@@ -10,7 +10,7 @@ const StartPage = () => {
 
     return (
         <div className="layout-container">
-            <h1 className="headline--huge">Arne's Quiz Game</h1>         
+            <h1 className="heading">Arne's Quiz Game</h1>         
             <button className="button" onClick={moveToChoseCategoryPhase}>Create Game</button>   
         </div>
     )
