@@ -3,6 +3,8 @@ import {QuizContext, GAME_PHASES} from "../contexts/quizContext"
 
 import CategoryInputList from "../components/category-input-list.component"
 import AskAutofillOverlay from "../components/ask-autofill-overlay.component"
+import Header from "../components/header.component"
+
 
 
 const generateCategorySlots = (existingCategories) => {
@@ -58,7 +60,7 @@ const ChoseCategoriesPage = () => {
     console.log(premadeCategories)
     return (
         <div className="layout-container">
-            <h1 className="headline--huge">Chose 6 Categories</h1>   
+            <Header>Chose 6 Categories</Header>
             <CategoryInputList categorySlots={categorySlots} onChange={onChange} premadeCategories={premadeCategories}/>                 
             <button className="button" onClick={onSetGameCategories}>Set Categories</button>
             <AskAutofillOverlay 

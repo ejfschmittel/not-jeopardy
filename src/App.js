@@ -34,10 +34,7 @@ const App = () => {
      
     return (
         <QuizContext.Provider value={quizContextValues}>
-            <main>
-                <OptionsButton />
-                <PrevisousGamePhaseButton />
-                <div className="background"></div>
+            <main className="main-container">                            
                 {getCurrentGamePhasePage()}
             </main>
         </QuizContext.Provider>
@@ -45,3 +42,22 @@ const App = () => {
 }
 
 export default App
+
+/**
+    <div>
+        Header
+            option  healine option
+            space conetnt sapce 
+            space   button space
+
+            option  healine option
+            space conetnt sapce 
+            space   button space
+        <div>
+
+        </div>
+    </div>
+ * <lAYOUT header={true} headline={} /> <content></Layout/> 
+ 
+ */
+

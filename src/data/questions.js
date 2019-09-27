@@ -105,3 +105,65 @@ const questions = {
 }
 
 export default questions;
+
+/*
+GEOGRAPHY
+{question: 'Welches ist das 2 größte Land Europas nach Fläche (einschließlich Russland)?', answer: 'Ukraine'}
+{question: 'Welches Rang belegt Deutschland, wenn man die Europäischen Länder nach Fläche ordnet?', answer: '6ten'}
+{question: 'Was ist die Hauptstadt von Portugal?', answer: 'Lissabon'}
+{question: 'Was ist die Hauptstadt von Kroatien?', answer: 'Zagreb'}
+{question: 'Was ist die Hauptstadt von der Türkei?', answer: 'Ankara'}
+{question: 'Was ist die Hauptstadt von Ägypten?', answer: 'Kairo'}
+{question: 'Was ist die Hauptstadt von Südafriak?', answer: 'Pretoria'}
+{question: 'Was ist die Hauptstadt von China?', answer: 'Peking'}
+{question: 'Was ist die Hauptstadt von Indien?', answer: 'Neu-Delhi'}
+{question: 'Was ist die Hauptstadt von Russland?', answer: 'Moskau'}
+{question: 'Was ist die Hauptstadt von Nord Korea?', answer: 'Pjöngjang'}
+{question: 'Was ist die Hauptstadt von Saudi Arabien?', answer: 'Riad'}
+{question: 'Was ist die Hauptstadt von Neuseeland?', answer: 'Wellington'}
+{question: 'Was ist die Hauptstadt von Kanada?', answer: 'Ottawa'}
+{question: 'Was ist die Hauptstadt von Kolumbien?', answer: 'Bogota'}
+{question: 'Zu welchem Kontinent gehört Tonga?', answer: 'Ozeanien'}
+{question: 'Zu welchem Kontinent gehört Brunei?', answer: 'Asien'}
+{question: 'Zu welchem Kontinent gehört Tschad?', answer: 'Afrika'}
+{question: 'Zu welchem Kontinent gehört Bahrain?', answer: 'Asien'}
+{question: 'Zu welchem Kontinent gehört Andorra?', answer: 'Europa'}
+{question: 'Zu welchem Kontinent gehören die Malediven?', answer: 'Asien'}
+{question: 'Zu welchem Kontinent gehören die seychellen?', answer: 'Afrika'}
+{question: 'Zu welchem Kontinent gehört Gabun?', answer: 'Afrika'}
+{question: 'Zu welchem Kontinent gehört Liberia?', answer: 'Afrika'}
+{question: 'Zu welchem Kontinent gehört Costa Rica?', answer: 'Nord Amerika'}
+{question: 'Zu welchem Kontinent gehört Peru', answer: 'Süd Amerika'}
+{question: 'Welches europäische Land hat das höchste BIP?', answer: 'Luxenburg'}
+{question: 'Die drei Länder mit dem höchsten BIP in Europa sind?', answer: 'Luxenburg, Norwegen und Irland'}
+{question: 'Welcher große Fluss fließt durch den Grand Canyon?', answer: 'Der Colorado River'}
+{question: 'Was ist der höchste Berg von Afrika?', answer: 'Kilimandscharo'}
+{question: 'Wo befindet sich das Brandenburger Tor?', answer: 'Berlin'}
+{question: 'Inwelchem Land findet man eine Stadt names Limerick?', answer: 'Irland'}
+{question: 'Welche Stadt hieß früher new Amsterdam?', answer: 'New York'}
+{question: 'Welches Land hieß früher new Holland?', answer: 'Australien'}
+{question: 'Welcher Kanal verbindet das Rotemeer und das Mittelmeer?', answer: 'der Sueskanal'}
+{question: 'Welches Land produziert am meisten Eier?', answer: 'China'}
+{question: 'Was ist der drittgrößte Ozean?', answer: 'Indischer Ozean'}
+{question: 'Was ist der größte Ozean?', answer: 'Pazifik'}
+{question: 'Was ist der größte See in Afrika', answer: 'Lake Victoria'}
+{question: '?', answer: ''}
+
+SPORT 
+{question: '?', answer: ''}
+
+HISTORY 
+{question: '?', answer: ''}
+
+SCIENCE
+{question: '?', answer: ''}
+
+MUSIC
+
+FILM
+
+GAMING
+
+
+
+*/

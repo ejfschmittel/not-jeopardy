@@ -24,8 +24,8 @@ const PreviousGamePhaseButton = () =>{
     }
 
     return (
-        <div className="back-button" onClick={goToPreviousGamePhase}>
-         <BackButton className="back-button__inner"/>
+        <div className="nav-button nav-button--left" onClick={goToPreviousGamePhase}>
+         <BackButton className="nav-button__svg"/>
         </div>
     )
 }

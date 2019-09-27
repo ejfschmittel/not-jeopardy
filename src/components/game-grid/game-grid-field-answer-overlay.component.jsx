@@ -23,7 +23,7 @@ const GameGridFieldAnswerOverlay = ({questionObj, category, value, hideOverlay})
                 <div className="answer-display">
                 {answer}
                 </div>
-                <div className="row">   
+                <div className="button-row">   
                     {!used ? <button className="button button--inline" onClick={onUse}>use</button> : null}
                     <button className="button button--inline" onClick={hideOverlay}>cancel</button>
                 </div>

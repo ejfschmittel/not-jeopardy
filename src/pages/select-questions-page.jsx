@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import {QuizContext, GAME_PHASES} from "../contexts/quizContext"
 import GameGrid from "../components/game-grid/game-grid.component"
 import AskAutofillOverlay from "../components/ask-autofill-overlay.component"
+import Header from "../components/header.component"
 
 const SelectQuestionsPage = () =>  {
     const {gameQuestions,  autoFillAllQuestions, emptyQuestionsExist, setGamePhase} = useContext(QuizContext)
@@ -23,7 +24,7 @@ const SelectQuestionsPage = () =>  {
 
     return (
         <div className="layout-container">
-            <h1 className="headline--huge">Select Questions</h1>
+            <Header>Select Questions</Header>
             <GameGrid edit={true} gameQuestions={gameQuestions}/>
             <button onClick={onConfirmQuesitonsClick} className="button">Confirm Questions</button>
             <AskAutofillOverlay 

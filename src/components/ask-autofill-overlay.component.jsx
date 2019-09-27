@@ -14,8 +14,8 @@ const AskAutofillOverlay = ({show, setShow, onAutofill, title}) => {
     return (
         <div className="overlay">
             <div className="overlay__box">                    
-                <h4 className="headline--medium">{title}</h4>
-                <div className="row">
+                <h4 className="heading--medium">{title}</h4>
+                <div className="button-row">
                     <button className="button button--inline" onClick={onAutofillClick}>Autofill</button>
                     <button className="button button--inline" onClick={onHideClick}>Fix myself</button>
                 </div>

@@ -31,7 +31,7 @@ const GameGridFieldEditor = ({questionObj, hideOverlay, category, value}) => {
                 <input className="input input--small" type="text" onChange={(e) => setQuestionState(e.target.value)} value={questionState}/>
                 <label className="label">Answer</label>
                 <input className="input input--small" type="text" onChange={(e) => setAnswerState(e.target.value)} value={answerState}/>
-                <div className="row">
+                <div className="button-row">
                     <button className="button button--inline" onClick={onSubmitQuestion}>Set Question</button>
                     <button className="button button--inline" onClick={setRandomQuestion}>autofill</button>
                     <button className="button button--inline" onClick={hideOverlay}>cancel</button>

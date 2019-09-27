@@ -2,7 +2,7 @@ import React from 'react'
 import CategoryInput from "./category-input.component"
 
 const CategoryInputList = ({categorySlots, onChange, premadeCategories}) => (
-    <div>
+    <div className="category-input-list">
         {Object.keys(categorySlots).map((key) => (
             <CategoryInput 
                 key={key} 

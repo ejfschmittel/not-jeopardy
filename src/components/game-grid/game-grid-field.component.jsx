@@ -44,7 +44,7 @@ const GameGridField = ({value, questionObj, category}) => {
     
     return (
         <div className={`game-grid__cell ${questionObj.filled? 'game-grid__cell--filled' : ''} ${questionObj.used? 'game-grid__cell--used' : ''}`} onClick={onCellClick}>
-            <div>{value}|{category}</div>
+            {value} {category}
             {renderOverlay()}         
         </div>
     )
