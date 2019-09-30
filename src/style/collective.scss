@@ -1,7 +1,7 @@
 // layout
 .main-container{
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background: $background-dark;
     background: radial-gradient(circle, $background-light 0%, $background-dark 100%);
     overflow: hidden;
