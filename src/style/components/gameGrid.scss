@@ -1,6 +1,6 @@
 .game-grid{
     width: 100vw;
-    max-height: 80vh;
+    max-height: 80%;
     display: grid;
     grid-template-columns: repeat(6, minmax(min-content, 1fr));
     grid-template-rows: repeat(6, 1fr);
@@ -13,7 +13,7 @@
     // use css variables ??
     &__cell{
         --background-color: 255, 0, 0;
-        padding: 3vh 0;
+        padding: 2rem 0;
         border: 2px solid #333;
         display: flex;
         align-items: center;
