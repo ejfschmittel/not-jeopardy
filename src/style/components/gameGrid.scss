@@ -8,6 +8,11 @@
     flex: 1;
 
 
+    @media only screen and (max-height: 380px ) {
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+   
   
     
     // use css variables ??
@@ -58,7 +63,10 @@
         &--header{
             font-size: 2rem;
             text-transform: uppercase;
-            
+
+            @media only screen and (max-height: 380px ) {
+                display: none;
+            }
             cursor:inherit;
             @include respond(tab-port){
                 font-size: 1.2rem;
