@@ -2,7 +2,7 @@ import React from "react"
 import {Route, Redirect} from "react-router-dom"
 import {connect} from "react-redux"
 
-// test git
+// test git asdfasdf
 const PrivateRoute = ({authenticated, component: Component, ...otherProps}) => (
     <Route 
         {...otherProps}
