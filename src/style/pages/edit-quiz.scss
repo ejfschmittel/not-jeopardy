@@ -1,0 +1,9 @@
+.quiz-editor{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__body{
+        flex: 1;
+    }
+}

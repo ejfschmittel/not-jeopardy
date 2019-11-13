@@ -1,12 +1,48 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import DefaultCategoryDataList from "./default-category-data-list.component"
+import {connect} from "react-redux"
 
-const CategoryInput = ({categories, id, onChange, value}) => (
-    <div> 
-        <input className="input" list={`choose-category-${id}`} onChange={(e) => onChange(e, id)} value={value}/>
-        <datalist id={`choose-category-${id}`}>
-            {categories.map(category => <option key={`choose-category-${id}-${category}`} value={category} />)}
-        </datalist>
-    </div>
-)
+import DataListInput from "./datalistinput.component"
 
-export default CategoryInput
+import {fetchDefaultCategories} from "../redux/category/cateogry.actions"
+
+const CategoryInput = ({ value, name, onChange, defaultCategories, fetchDefaultCategories}) => {
+
+    // load default categories if not existant on load
+    useEffect(() => {
+        // fetch default categories
+        console.log(value)
+        if(!defaultCategories){
+            fetchDefaultCategories()
+        }
+        // fetch user categories
+    }, [])
+
+    const onInputChange = (e, category, name) => {
+        // gets either objects formed {default: true, name: "history", id: "2rDnLE7itRBh3nSUJQqc"} or {name: "film"}
+        onChange(e, {default: false, id: null, ...category}, name)
+    }
+    
+    return (
+        <DataListInput 
+            className="input"
+            name={name}
+            data={defaultCategories}
+            value={value}
+            onChange={onInputChange}
+            displayKey="name"
+        />
+    )
+}
+
+
+const mapStateToProps = ({categoryReducer: {defaultCategories}}) => ({
+    defaultCategories
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchDefaultCategories: () => dispatch(fetchDefaultCategories())
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryInput)

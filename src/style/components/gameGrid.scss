@@ -1,79 +1,52 @@
 .game-grid{
-    width: 100vw;
-    max-height: 80%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
     display: grid;
     grid-template-columns: repeat(6, minmax(min-content, 1fr));
     grid-template-rows: repeat(6, 1fr);
     grid-auto-flow: column;
-    flex: 1;
 
-
-    @media only screen and (max-height: 380px ) {
-        grid-template-rows: repeat(5, 1fr);
+    @media(max-height: 650px) {
+        grid-auto-flow: row;
     }
 
-   
-  
-    
-    // use css variables ??
+    &__column{
+        
+    }
+
     &__cell{
-        --background-color: 255, 0, 0;
-        padding: 2rem 0;
-        border: 2px solid #333;
+        color: #333;
+        border: 1px solid #fff;
         display: flex;
-        align-items: center;
         justify-content: center;
-
-        font-weight: bold;
-        font-size: 1.6rem;
-        text-align: center;
-
-        
-
-        @include respond(tab-port){
-            padding: 3.5vh 0;
-            word-wrap: break-word;
-            font-size: 1.6rem;
-            word-wrap: break-word;
-        }
-  
-        
+        align-items: center;
         cursor: pointer;
-        background-color: #B03F3F;
-        color: #fff;
-
-        &--filled{
-            background-color: #c15f5f;
-        }
+        font-size: 1.4rem;
 
         &:hover{
-            background:#c15f5f;
+            background: #eee;
         }
 
-        &--used{
-            background-color: #7d19b3;
+        &--filled{
+            background: red;
 
             &:hover{
-                background-color: #7d19b3;
+                background: red;
             }
         }
+    }
 
-        
+    &__column-header{
+        background: #333;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        cursor: auto;
 
-        &--header{
-            font-size: 2rem;
-            text-transform: uppercase;
-
-            @media only screen and (max-height: 380px ) {
-                display: none;
-            }
-            cursor:inherit;
-            @include respond(tab-port){
-                font-size: 1.2rem;
-                word-wrap: break-word;
-            }
-
-            
+        &:hover{
+            background: #333;
         }
     }
 }

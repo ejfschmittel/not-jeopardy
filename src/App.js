@@ -1,63 +1,80 @@
-import React, {createContext, useState, useEffect, useContext} from 'react'
+import React, {useEffect} from 'react'
+import {HashRouter, Switch, Route} from "react-router-dom"
+import {connect} from "react-redux"
 
-import StartPage from "./pages/start-page"
-import ChoseCategoryPage from "./pages/chose-categories-page"
-import SelectQuestionsPage from "./pages/select-questions-page"
-import GamePage from "./pages/game-page"
+import {auth, createUserProfileDocument} from "./firebase/firebase.setup"
+import {setCurrentUser, signOut} from "./redux/user/user.actions"
+import PrivateRoute from "./utils/AuthRoute"
 
-import PrevisousGamePhaseButton from "./components/previous-gamephase-button.component"
-import OptionsButton from "./components/options-button.component"
 
-import {useQuizContext,QuizContext, GAME_PHASES} from "./contexts/quizContext"
+import Header from "./components/header.component"
+
+import StartPage from "./pages/start.page"
+import LoginPage from "./pages/login.page"
+import SignupPage from "./pages/signup.page"
+import CreateQuizPage from "./pages/create-quiz.page"
+import CreateCategoryPage from "./pages/create-category.page"
+import CreateQuestionPage from "./pages/create-question.page"
+import MyQuizzesPage from "./pages/my-quizzes.page"
+
 import 'style/main.scss'
 
+const Placeholder = () => <div>Placholder Page</div>
 
-const App = () => {
-    const quizContextValues = useQuizContext()
-    const {gamePhase} = quizContextValues
-    console.log(quizContextValues)
+const App = ({setCurrentUser, currentUser}) => {
 
-    // use callback ??? / optimize
-    const getCurrentGamePhasePage = () => {
-        switch(gamePhase){
-            case GAME_PHASES.SELECT_QUESTIONS:
-                return (<SelectQuestionsPage />)
-            case GAME_PHASES.CHOSE_CATEGORIES:
-                return (<ChoseCategoryPage />)
-            case GAME_PHASES.GAME:
-                return (<GamePage />)
-            case GAME_PHASES.START:
-            default: 
-                return (<StartPage />)
-        }
-    }
-     
+    // firebase handling login state changes
+   let unsubsribeFromAuth = null
+    useEffect(() => {
+        unsubsribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+            if (userAuth) {
+                const userRef = await createUserProfileDocument(userAuth);   
+                userRef.onSnapshot(snapShot => {
+                    setCurrentUser({
+                        id: snapShot.id,
+                        ...snapShot.data()
+                    });
+                });
+            }
+        
+            setCurrentUser(userAuth);
+        })
+
+        return () => {unsubsribeFromAuth()};
+    }, [])
+
     return (
-        <QuizContext.Provider value={quizContextValues}>
-            <main className="main-container">                            
-                {getCurrentGamePhasePage()}
-            </main>
-        </QuizContext.Provider>
+        <HashRouter>
+            <Header />
+            <main className="main-container">
+                {currentUser != false && (           
+                    <Switch>
+                        <Route path="/" component={StartPage} exact={true}/>
+                        <Route path="/users/login" component={LoginPage} />
+                        <Route path="/users/signup" component={SignupPage} />
+        
+                        <PrivateRoute path="/quiz/me" component={MyQuizzesPage} />
+                        <PrivateRoute path="/question/create" component={CreateQuestionPage} />
+                        <PrivateRoute path="/category/create" component={CreateCategoryPage} />
+                        <PrivateRoute path="/quiz/create" component={CreateQuizPage} />
+                        <PrivateRoute path="/quiz/:gameId/edit" component={Placeholder} />
+                        <PrivateRoute path="/quiz/:gameId/" component={Placeholder} />
+                    </Switch>
+                )}
+            </main>  
+        </HashRouter>
     )
+
+
 }
 
-export default App
+const mapDispatchToProps = (dispatch) => ({
+    setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+})
 
-/**
-    <div>
-        Header
-            option  healine option
-            space conetnt sapce 
-            space   button space
+const mapStateToProps = ({userReducer: {currentUser}}) => ({
+    currentUser
+}) 
 
-            option  healine option
-            space conetnt sapce 
-            space   button space
-        <div>
-
-        </div>
-    </div>
- * <lAYOUT header={true} headline={} /> <content></Layout/> 
- 
- */
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 
